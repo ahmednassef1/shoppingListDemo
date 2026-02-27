@@ -1,0 +1,49 @@
+# Gradle
+.gradle/
+build/
+**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# Local properties (contains SDK path - never commit this)
+local.properties
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+*.ipr
+*.iws
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Kotlin metadata cache
+.kotlin/
+
+# Kotlin
+*.kotlin_module
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Secrets / Keys
+google-services.json
+GoogleService-Info.plist
+*.jks
+*.keystore
+keystore.properties
