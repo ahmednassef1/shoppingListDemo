@@ -109,9 +109,6 @@ class ShoppingListViewModel @Inject constructor(
                 }
 
                 is Resource.Success<Boolean> -> {
-                    Log.e("app name", "success (${it.model}) and (${_isSuccess.value})")
-
-//                    _isSuccess.value = it.model
                     _isSuccess.update { _ ->
                         it.model
                     }
