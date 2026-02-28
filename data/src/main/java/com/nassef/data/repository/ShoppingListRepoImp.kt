@@ -1,9 +1,9 @@
-package com.nassef.data.features.shoppingList.repository
+package com.nassef.data.repository
 
 import com.nassef.data.local.ShoppingListDao
 import com.nassef.data.mappers.ItemMapper
 import com.nassef.domain.entities.Item
-import com.nassef.domain.features.shoppingList.repository.IShoppingListRepo
+import com.nassef.domain.repository.IShoppingListRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

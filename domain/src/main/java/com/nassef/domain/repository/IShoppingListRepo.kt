@@ -1,4 +1,4 @@
-package com.nassef.domain.features.shoppingList.repository
+package com.nassef.domain.repository
 
 import com.nassef.domain.entities.Item
 import kotlinx.coroutines.flow.Flow

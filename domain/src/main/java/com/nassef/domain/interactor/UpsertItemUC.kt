@@ -1,9 +1,9 @@
-package com.nassef.domain.features.shoppingList.interactor
+package com.nassef.domain.interactor
 
 import com.nassef.core.domain.error.ErrorHandler
 import com.nassef.core.domain.interactor.BaseUseCase
 import com.nassef.domain.entities.Item
-import com.nassef.domain.features.shoppingList.repository.IShoppingListRepo
+import com.nassef.domain.repository.IShoppingListRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

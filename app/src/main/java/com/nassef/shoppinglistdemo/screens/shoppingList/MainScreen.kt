@@ -120,7 +120,8 @@ fun MainScreen(modifier: Modifier = Modifier, viewModel: ShoppingListViewModel =
                     onDeleteItem = { viewModel.deleteItem(it) },
                     onEditItem = { viewModel.upsertShoppingItem(it) },
                     onFilterByCategory = { viewModel.filterShoppingList(it) },
-                    onResetFilter = { viewModel.resetFiltering() }
+                    onResetFilter = { viewModel.resetFiltering() },
+                    onOrderAlphabetically = {viewModel.orderShoppingListAlphabetically()}
                 ) {
                     showAddItemView.value = false
                 }
@@ -426,6 +427,7 @@ fun ItemsList(
     onEditItem: (Item) -> Unit = {},
     onFilterByCategory: (Category) -> Unit = {},
     onResetFilter: () -> Unit = {},
+    onOrderAlphabetically: () -> Unit = {},
     hideAddItemView: () -> Unit = {}
 ) {
     val showFiltration = rememberSaveable {
@@ -456,6 +458,18 @@ fun ItemsList(
             }
             IconButton(
                 modifier = Modifier, onClick = {
+                    onOrderAlphabetically()
+                }) {
+                Icon(
+                    painter = painterResource(R.drawable.arrow_down_a_z),
+                    contentDescription = "filter",
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .size(15.dp)
+                )
+            }
+            IconButton(
+                modifier = Modifier, onClick = {
                     selectedCategoryName.value = ""
                     onResetFilter()
                 }) {
@@ -475,6 +489,7 @@ fun ItemsList(
                 onFilterByCategory(it)
             }
         }
+
 
         LazyColumn(modifier = modifier, state = rememberLazyListState()) {
             items(items, key = { it.id }) {

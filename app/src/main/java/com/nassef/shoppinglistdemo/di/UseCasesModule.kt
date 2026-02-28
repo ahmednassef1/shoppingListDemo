@@ -1,11 +1,11 @@
 package com.nassef.shoppinglistdemo.di
 
 import com.nassef.core.domain.error.ErrorHandler
-import com.nassef.domain.features.shoppingList.interactor.DeleteItemByCodeUC
-import com.nassef.domain.features.shoppingList.interactor.DeleteItemUC
-import com.nassef.domain.features.shoppingList.interactor.GetShoppingListUC
-import com.nassef.domain.features.shoppingList.interactor.UpsertItemUC
-import com.nassef.domain.features.shoppingList.repository.IShoppingListRepo
+import com.nassef.domain.interactor.DeleteItemByCodeUC
+import com.nassef.domain.interactor.DeleteItemUC
+import com.nassef.domain.interactor.GetShoppingListUC
+import com.nassef.domain.interactor.UpsertItemUC
+import com.nassef.domain.repository.IShoppingListRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

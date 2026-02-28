@@ -6,9 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.nassef.core.data.model.Resource
 import com.nassef.domain.entities.Category
 import com.nassef.domain.entities.Item
-import com.nassef.domain.features.shoppingList.interactor.DeleteItemUC
-import com.nassef.domain.features.shoppingList.interactor.GetShoppingListUC
-import com.nassef.domain.features.shoppingList.interactor.UpsertItemUC
+import com.nassef.domain.interactor.DeleteItemUC
+import com.nassef.domain.interactor.GetShoppingListUC
+import com.nassef.domain.interactor.UpsertItemUC
 import com.nassef.shoppinglistdemo.util.UiManager
 import com.nassef.shoppinglistdemo.util.WhileUiSubscribed
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -144,6 +144,13 @@ class ShoppingListViewModel @Inject constructor(
     fun filterShoppingList(category: Category) {
         _isFiltering.value = true
         _filteredShoppingList.value = _shoppingList.value.filter { it.category == category }
+    }
+
+    fun orderShoppingListAlphabetically() {
+        _isFiltering.value = true
+        _filteredShoppingList.value = _shoppingList.value.sortedBy {
+            it.name
+        }
     }
 
     fun resetFiltering() {
