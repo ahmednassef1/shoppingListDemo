@@ -1,0 +1,23 @@
+package com.nassef.shoppinglistdemo
+
+import android.app.Application
+import android.content.Context
+import com.hwasfy.localize.util.LocaleHelper
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class ShoppingListApplication : Application() {
+    override fun attachBaseContext(base: Context?) {
+        base?.let { super.attachBaseContext(LocaleHelper.wrapContext(it)) }
+            ?: super.attachBaseContext(base)
+    }
+}
+/*@HiltAndroidApp
+class ArticlesApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+    }
+    override fun attachBaseContext(base: Context?) {
+        base?.let { super.attachBaseContext(LocaleHelper.wrapContext(it)) } ?: super.attachBaseContext(base)
+    }
+}*/
